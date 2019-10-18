@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto"
         mc:Ignorable="d"
-        Title="Proyect" Height="720" Width="1080" WindowState="Maximized">
+        Title="MyMusic" Height="1080" Width="1920" WindowState="Maximized">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="20"/>
@@ -16,7 +16,7 @@
             <Setter Property="Margin" Value="10"/>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid FocusableChanged="Grid_FocusableChanged">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.3*"/>
             <ColumnDefinition Width="*"/>
@@ -26,15 +26,36 @@
             <RowDefinition Height="0.7*"/>
             <RowDefinition Height="0.7*"/>
             <RowDefinition Height="9*"/>
+            <RowDefinition Height="0.8*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="MyMusicList " Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="BlueViolet" FontSize="40"/>
-        <ComboBox Grid.Row="1" FontSize="18" Name="cbMostrar" Width="230" Margin="10" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center">
-            <ComboBoxItem Content="Mostrar..." Selector.IsSelected="True" />
+        <ComboBox Grid.Row="1" FontSize="18" Name="cbMostrar" Width="230" Margin="10" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" SelectionChanged="CbMostrar_SelectionChanged" FocusableChanged="CbMostrar_FocusableChanged">
+            <ComboBoxItem Content="Mostrar..." Selector.IsSelected="True"/>
             <ComboBoxItem Content="Géneros" />
-            <ComboBoxItem Content="Listas de reproducción" />
+            <ComboBoxItem Content="Listas de reproduccion" />
             <ComboBoxItem Content="Todas las canciones" />
         </ComboBox>
-        <ComboBox Visibility="Hidden" Grid.Row="2" FontSize="18" Name="cbSelectType" Width="230" Margin="10" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="btnMostrar" Grid.Column="0" Grid.Row="1" FontSize="18" Content="Elegir" HorizontalAlignment="Left" Height="30" Width="90" Click="Button_Click" Margin="351,14,0,15"/>
+        <ComboBox Visibility="Hidden" Grid.Row="2" FontSize="18" Name="cbGeneros" Width="230" Margin="10" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center">
+            <ComboBoxItem Content="Género a mostrar..." Selector.IsSelected="True"/>
+            <ComboBoxItem Content="Rock"/>
+            <ComboBoxItem Content="Pop"/>
+            <ComboBoxItem Content="Hip-Hop"/>
+            <ComboBoxItem Content="Jazz"/>
+            <ComboBoxItem Content="Punk"/>
+            <ComboBoxItem Content="Soul"/>
+            <ComboBoxItem Content="Eléctrica"/>
+            <ComboBoxItem Content="Oriental"/>
+            <ComboBoxItem Content="Orquesta"/>
+            <ComboBoxItem Content="Banda"/>
+            <ComboBoxItem Content="Reguetón"/>
+        </ComboBox>
+        <ComboBox Visibility="Hidden" Grid.Row="2" FontSize="18" Name="cbListas" Width="230" Margin="10" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center">
+            <ComboBoxItem Content="Lista a mostrar..." Selector.IsSelected="True"/>
+        </ComboBox>
+        <Button Visibility="Hidden" Name="btnElegir" Grid.Column="0" Grid.Row="2" FontSize="18" Content="Elegir" HorizontalAlignment="Right" Height="30" Width="90" Click="BtnElegir_Click"/>
         <DataGrid Grid.Row="3" Grid.Column="0" AutoGenerateColumns="True" Name="gvMusic" Background="Gray" SelectionMode="Single" FontSize="18" Padding="5"/>
+        <Button Grid.Column="0" Grid.Row="4" FontSize="18" Content="Agregar música" Height="45" Width="180" Click="Button_Click_1"/>
+        <WebBrowser Grid.Row="3" Grid.Column="1" Name="wbVideo" Width="1080" Height="720" VerticalAlignment="Top"/>
     </Grid>
 </Window>

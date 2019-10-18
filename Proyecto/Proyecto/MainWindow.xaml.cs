@@ -49,5 +49,72 @@ namespace Proyecto
         {
 
         }
+
+        private void CbMostrar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void CbMostrar_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            
+        }
+
+        private void CbMostrar_LostFocus(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Grid_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            btnElegir.Visibility = System.Windows.Visibility.Visible;
+            if (cbGeneros.IsEnabled == true || cbListas.IsEnabled == true )
+            {
+                if (cbMostrar.Text == "Géneros")
+                {
+                    cbGeneros.Visibility = System.Windows.Visibility.Visible;
+                    cbListas.Visibility = System.Windows.Visibility.Hidden;
+                }
+                else if (cbMostrar.Text == "Listas de reproduccion")
+                {
+                    cbListas.Visibility = System.Windows.Visibility.Visible;
+                    cbGeneros.Visibility = System.Windows.Visibility.Hidden;
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        private void BtnElegir_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbGeneros.IsEnabled == true || cbListas.IsEnabled == true)
+            {
+                if (cbMostrar.Text == "Géneros")
+                {
+
+                }
+                else if (cbMostrar.Text == "Listas de reproduccion")
+                {
+                    
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Agregar add = new Agregar();
+            add.Visibility = System.Windows.Visibility.Visible;
+        }
     }
 }
