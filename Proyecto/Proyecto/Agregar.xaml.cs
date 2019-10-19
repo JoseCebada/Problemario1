@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.OleDb;
+using System.Data;
 
 namespace Proyecto
 {
@@ -19,6 +21,10 @@ namespace Proyecto
     /// </summary>
     public partial class Agregar : Window
     {
+
+        OleDbConnection con; //Agregamos la conexión
+        DataTable dt; //Agregar la tabla
+
         public Agregar()
         {
             InitializeComponent();
@@ -38,5 +44,7 @@ namespace Proyecto
         {
 
         }
+
+       
     }
 }

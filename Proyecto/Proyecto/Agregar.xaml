@@ -27,7 +27,7 @@
             </WrapPanel>
             <WrapPanel>
                 <TextBlock Text="Artista: "/>
-                <TextBox Name="Genero" />
+                <TextBox Name="txtartista" />
             </WrapPanel>
             <WrapPanel>
                 <TextBlock Text="Género: "/>
